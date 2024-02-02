@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ahorcado</title>
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+</head>
+<body>
+    <div id="inicio">
+        <input type="text" id="nombreJugador" placeholder="Ingresa tu nombre">
+        <button id="botonComenzar">Comenzar a jugar</button>
+    </div>
+
+    <div id="juego" style="display: none;">
+        
+        <div id="imagenAhorcado">
+            
+            <img id="imgActual" src="imagenesAhorcado/6.png" alt="imagen ahorcado" style="display: block;">
+            
+
+        </div>
+        <div id="seleccionLetras">
+            <!-- Aquí se generarán los botones de las letras -->
+        </div>
+        <div id="mascara">
+            <!-- Aquí se mostrará la palabra con máscaras -->
+        </div>
+    </div>
+
+    <script src="ahorcado.js"></script>
+</body>
+</html>

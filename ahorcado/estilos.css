@@ -1,0 +1,41 @@
+#inicio {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+#nombreJugador {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#botonComenzar {
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#botonComenzar:hover {
+    background-color: darkblue;
+}
+#juego {
+    margin: auto;
+    width: 80%;
+    text-align: center;
+}
+.letra {
+    margin: 5px;
+    padding: 10px;
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.letra:hover {
+    background-color: #c0c0c0;
+}
