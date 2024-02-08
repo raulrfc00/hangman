@@ -91,11 +91,11 @@ document.getElementById("botonComenzar").addEventListener("click", function() {
     document.getElementById("inicio").style.display = "none";
     document.getElementById("juego").style.display = "block";
 
-    iniciarJuego();
 });
 document.addEventListener('DOMContentLoaded', (event) => {
-    cargarEstadoJuego();
+    cargarEstadoJuego(); // Esto solo configura el juego si hay un estado guardado.
 });
+
 
 let vidas = 6;
 let palabrasDisponibles ='ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -118,16 +118,17 @@ function actualizarJuego(){
 }
 
 function iniciarJuego(){
-    if (!localStorage.getItem('estadoJuego')) {
+    
         // Solo inicializa un nuevo juego si no hay estado guardado
-        lista = seleccionarLista(lugares, transporte, equipaje);
+        let lista = seleccionarLista(lugares, transporte, equipaje);
         estadoJuego.palabraActual = seleccionarPalabra(lista);
         estadoJuego.mascara = crearMascara(estadoJuego.palabraActual.length);
         generarBotonesLetras();
         mostrarCategoriaPalabra();
         guardarEstadoJuego();
+        console.log('juego iniciado');
 
-    }
+
 }
 function mostrarCategoriaPalabra() {
     const nombreCategoria = estadoJuego.listaSeleccionada; 
@@ -286,7 +287,7 @@ function guardarEstadoJuego() {
 }
 
 function cargarEstadoJuego() {
-    const estadoGuardado = localStorage.getItem('estadoJuego');
+    let estadoGuardado = localStorage.getItem('estadoJuego');
 
     if (estadoGuardado) {
         const estadoCargado = JSON.parse(estadoGuardado);
@@ -303,6 +304,8 @@ function cargarEstadoJuego() {
         mostrarCategoriaPalabra();
 
         guardarEstadoJuego();
+        console.log('juego cargado');
+
         // Resto de la actualización de la interfaz...
     } else {
         // Inicializar un nuevo juego si no hay estado guardado
