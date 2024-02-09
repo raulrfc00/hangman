@@ -83,53 +83,74 @@ let estadoJuego = {
     mascara: '',
     listaSeleccionada: '',
     vidas: 6,
-
-
+    letrasCorrectas:[],
+    letrasIncorrectas: [],
 };
 
-document.getElementById("botonComenzar").addEventListener("click", function() {
+if (localStorage.getItem('estadoJuego')) {
     document.getElementById("inicio").style.display = "none";
     document.getElementById("juego").style.display = "block";
+    cargarEstadoJuego();
+}
 
-});
 document.addEventListener('DOMContentLoaded', (event) => {
-    cargarEstadoJuego(); // Esto solo configura el juego si hay un estado guardado.
+    document.getElementById("botonComenzar").addEventListener("click", function() {
+        document.getElementById("inicio").style.display = "none";
+        document.getElementById("juego").style.display = "block";
+        cargarEstadoJuego();
+    });
 });
 
 
-let vidas = 6;
 let palabrasDisponibles ='ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 let aciertos = 0;
 let listaGuardar = '';
 
-function actualizarJuego(){
-    
-        vidas--;
-        document.getElementById("imgActual").src = 'imagenesAhorcado/' + vidas + '.png';
-        console.log(vidas + 'vidas');
+function cargarEstadoJuego() {
+    let estadoGuardado = localStorage.getItem('estadoJuego');
+
+    if (estadoGuardado) {
         
-        if (vidas === 0){
-            document.getElementById("mascara").textContent = estadoJuego.palabraActual;
-            mostrarResultadoFinal();
-            resetearJuego();
-        }
-                
-    console.log('juegoAcualizado');
+        const estadoCargado = JSON.parse(estadoGuardado);
+
+        estadoJuego.palabraActual = estadoCargado.palabraActual;
+        estadoJuego.mascara = estadoCargado.mascara;
+        estadoJuego.vidas = estadoCargado.vidas;
+        document.getElementById('nombreJugador').value = estadoCargado.nombreUsuario; 
+        estadoJuego.listaSeleccionada = estadoCargado.lista;
+        generarBotonesLetras();
+        crearMascara(estadoJuego.palabraActual.length);
+        actualizarMascaraGuardada();
+        actualizarImagenAhorcadoGuardada();
+        mostrarCategoriaPalabra();
+
+        guardarEstadoJuego();
+        console.log('juego cargado');
+
+        // Resto de la actualización de la interfaz...
+    } else {
+        // Inicializar un nuevo juego si no hay estado guardado
+        iniciarJuego();
+    }
 }
 
 function iniciarJuego(){
     
-        // Solo inicializa un nuevo juego si no hay estado guardado
-        let lista = seleccionarLista(lugares, transporte, equipaje);
-        estadoJuego.palabraActual = seleccionarPalabra(lista);
-        estadoJuego.mascara = crearMascara(estadoJuego.palabraActual.length);
-        generarBotonesLetras();
-        mostrarCategoriaPalabra();
-        guardarEstadoJuego();
-        console.log('juego iniciado');
+    // Solo inicializa un nuevo juego si no hay estado guardado
+    let lista = seleccionarLista(lugares, transporte, equipaje);
+    estadoJuego.palabraActual = seleccionarPalabra(lista);
+    estadoJuego.mascara = crearMascara(estadoJuego.palabraActual.length);
+    generarBotonesLetras();
+    mostrarCategoriaPalabra();
+    guardarEstadoJuego();
+    console.log('juego iniciado');
 
 
 }
+
+
+
+
 function mostrarCategoriaPalabra() {
     const nombreCategoria = estadoJuego.listaSeleccionada; 
     const elementoCategoria = document.getElementById('categoria'); 
@@ -196,42 +217,61 @@ function agregarEventosClick() {
     botones.forEach(function(boton) {
         boton.addEventListener('click', function() {
             // Aquí va la lógica que quieres ejecutar cuando se hace clic en una letra
-            buscarLetraEnPalabraSeleccionada(boton.textContent);
-            
+            buscarLetraEnPalabraSeleccionada(boton);           
 
-            boton.remove(); //elimina el botón de la letra al seleccionarlo
+            //boton.remove(); //elimina el botón de la letra al seleccionarlo
         });
     });
 
 }
 
 
-function buscarLetraEnPalabraSeleccionada(letra) {
-    let huboCambio = false;
-    let comprobacion = 0;
+function buscarLetraEnPalabraSeleccionada(button) {
+    let letra=button.textContent;
+    let encontrado = false;
+
     for (let i = 0; i < estadoJuego.palabraActual.length; i++) {
         if (letra === estadoJuego.palabraActual[i].toUpperCase()){
-            estadoJuego.mascara = actualizarMascara(i, letra, estadoJuego.mascara);
-            comprobacion++;
+            estadoJuego.mascara = actualizarMascara(i, letra, estadoJuego.mascara);            
             aciertos++;
+            encontrado = true;
         }
     }
-    if (comprobacion > 0){
-        huboCambio = true;
-    }
-    if (huboCambio) {
+ 
+    if (encontrado) {
         // Actualizar la máscara en el DOM
         document.getElementById("mascara").textContent = estadoJuego.mascara;
         if(aciertos === estadoJuego.palabraActual.length){
             mostrarResultadoFinal();
             resetearJuego();
         }
+        button.style.backgroundColor = "green";
+        button.disabled = true;
+        estadoJuego.letrasCorrectas.push(button.textContent);
     }else{
         actualizarJuego();
+        button.style.backgroundColor = "red";
+        button.disabled = true;
+        estadoJuego.letrasIncorrectas.push(button.textContent);
+
     }
     guardarEstadoJuego();
 }
 
+function actualizarJuego(){
+    
+    estadoJuego.vidas--;
+    document.getElementById("imgActual").src = 'imagenesAhorcado/' +estadoJuego.vidas + '.png';
+    console.log(estadoJuego.vidas + 'vidas');
+    
+    if (estadoJuego.vidas === 0){
+        document.getElementById("mascara").textContent = estadoJuego.palabraActual;
+        mostrarResultadoFinal();
+        resetearJuego();
+    }
+            
+    console.log('juegoAcualizado');
+}
 
 function actualizarMascara(posicion, letra, mascara){
     // Eliminar espacios de la máscara
@@ -247,21 +287,18 @@ function actualizarMascara(posicion, letra, mascara){
         }
     }
 
-    // Agregar espacios a la nueva máscara
     return agregarEspaciosAMascara(mascaraActualizada);
 }
 function actualizarMascaraGuardada() {
-    // Asumiendo que estadoJuego.mascara contiene la máscara actual
+
     const mascara = estadoJuego.mascara;
     if (mascara && mascara.length > 0) {
         document.getElementById("mascara").textContent = mascara;
     }
 }
 function actualizarImagenAhorcadoGuardada() {
-    // Asumiendo que tienes imágenes numeradas basadas en el número de vidas,
-    // y que el número máximo de vidas es 6.
-    const numeroDeImagen = vidas;
-    const srcImagen = `imagenesAhorcado/${numeroDeImagen}.png`; // Ajusta el path según tu estructura de archivos
+    const numeroDeImagen = estadoJuego.vidas;
+    const srcImagen = `imagenesAhorcado/${numeroDeImagen}.png`; 
     document.getElementById("imgActual").src = srcImagen;
 }
 
@@ -277,41 +314,18 @@ function guardarEstadoJuego() {
     const estadoParaGuardar = {
         palabraActual: estadoJuego.palabraActual,
         mascara: estadoJuego.mascara,
-        vidas: vidas,
+        vidas: estadoJuego.vidas,
         nombreUsuario: document.getElementById('nombreJugador').value,
         lista: estadoJuego.listaSeleccionada,
+        letrasCorrectas: estadoJuego.letrasCorrectas,
+        letrasIncorrectas: estadoJuego.letrasIncorrectas
 
     };
 
     localStorage.setItem('estadoJuego', JSON.stringify(estadoParaGuardar));
 }
 
-function cargarEstadoJuego() {
-    let estadoGuardado = localStorage.getItem('estadoJuego');
 
-    if (estadoGuardado) {
-        const estadoCargado = JSON.parse(estadoGuardado);
-
-        estadoJuego.palabraActual = estadoCargado.palabraActual;
-        estadoJuego.mascara = estadoCargado.mascara;
-        vidas = estadoCargado.vidas;
-        document.getElementById('nombreJugador').value = estadoCargado.nombreUsuario; 
-        lista = estadoCargado.lista;
-        generarBotonesLetras();
-        crearMascara(estadoJuego.palabraActual.length);
-        actualizarMascaraGuardada();
-        actualizarImagenAhorcadoGuardada();
-        mostrarCategoriaPalabra();
-
-        guardarEstadoJuego();
-        console.log('juego cargado');
-
-        // Resto de la actualización de la interfaz...
-    } else {
-        // Inicializar un nuevo juego si no hay estado guardado
-        iniciarJuego();
-    }
-}
 function mostrarResultadoFinal() {
     // Encuentra la descripción de la palabra basada en la lista seleccionada
     let descripcion;
@@ -330,7 +344,6 @@ function mostrarResultadoFinal() {
     // Puedes ajustar este paso para que se muestre en tu interfaz de usuario según sea necesario
     alert(mensajeFinal); // O reemplaza esto por una actualización en la interfaz de usuario
 
-    // Opcional: reiniciar el juego o mostrar opciones para reiniciar o cerrar
 }
 
 
@@ -341,14 +354,12 @@ function resetearJuego() {
     // Restablecer las variables del estado del juego a los valores iniciales
     estadoJuego.palabraActual = '';
     estadoJuego.mascara = '';
-    vidas = 6; 
+    estadoJuego.vidas = 6; 
     aciertos = 0;
     document.getElementById("mascara").textContent = '';
-    document.getElementById("imgActual").src = 'imagenesAhorcado/6.png'; // Suponiendo que 6 vidas es el estado inicial
+    document.getElementById("imgActual").src = 'imagenesAhorcado/6.png'; 
     
-    // Volver a generar los botones de las letras si es necesario
     iniciarJuego();
 
-    // Otras reinicializaciones necesarias para el juego...
 }
 
