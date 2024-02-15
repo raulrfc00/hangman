@@ -27,55 +27,56 @@
 let lugares = {
     "Paris": "Capital de Francia, famosa por la Torre Eiffel y el Museo del Louvre.",
     "Londres": "Capital del Reino Unido, conocida por el Big Ben y el Puente de Londres.",
-    "Nueva York": "Conocida como la Gran Manzana, famosa por Times Square y Central Park.",
-    "Tokio": "Capital de Japón, famosa por su torre Skytree y el cruce de Shibuya.",
-    "Madrid": "Capital de España, conocida por el Museo del Prado y la Puerta del Sol.",
-    "Berlin": "Capital de Alemania, famosa por el Muro de Berlín y la Puerta de Brandeburgo.",
+    "NuevaYork": "Conocida como la Gran Manzana, famosa por Times Square y Central Park.",
+    "Tokio": "Capital de Japon, famosa por su torre Skytree y el cruce de Shibuya.",
+    "Madrid": "Capital de Espana, conocida por el Museo del Prado y la Puerta del Sol.",
+    "Berlin": "Capital de Alemania, famosa por el Muro de Berlin y la Puerta de Brandeburgo.",
     "Roma": "Capital de Italia, conocida por el Coliseo y el Vaticano.",
     "Pekin": "Capital de China, famosa por la Ciudad Prohibida y la Gran Muralla China.",
     "Moscu": "Capital de Rusia, conocida por la Plaza Roja y el Kremlin.",
     "Dubai": "Emirato de los EAU, famoso por el Burj Khalifa y las islas Palm.",
-    "Sidney": "Ciudad de Australia, conocida por la Ópera de Sídney y el Puente del Puerto.",
+    "Sidney": "Ciudad de Australia, conocida por la Opera de Sidney y el Puente del Puerto.",
     "Bangkok": "Capital de Tailandia, famosa por sus vibrantes mercados y templos budistas.",
-    "Buenos Aires": "Capital de Argentina, conocida por el tango y la Casa Rosada.",
-    "Cairo": "Capital de Egipto, famosa por las Pirámides de Giza y la Esfinge.",
-    "Lisboa": "Capital de Portugal, conocida por el barrio de Alfama y la Torre de Belém.",
-    "Amsterdam": "Capital de los Países Bajos, famosa por sus canales y el Museo Van Gogh.",
-    "Praga": "Capital de la República Checa, conocida por el Puente de Carlos y su reloj astronómico."
+    "BuenosAires": "Capital de Argentina, conocida por el tango y la Casa Rosada.",
+    "Cairo": "Capital de Egipto, famosa por las Piramides de Giza y la Esfinge.",
+    "Lisboa": "Capital de Portugal, conocida por el barrio de Alfama y la Torre de Belem.",
+    "Amsterdam": "Capital de los Paises Bajos, famosa por sus canales y el Museo Van Gogh.",
+    "Praga": "Capital de la Republica Checa, conocida por el Puente de Carlos y su reloj astronomico."
 };
 
 
 // Array de Transporte
 let transporte = {
-    "Avion": "Rápido medio de transporte aéreo que conecta ciudades a nivel mundial.",
+    "Avion": "Rapido medio de transporte aereo que conecta ciudades a nivel mundial.",
     "Tren": "Medio de transporte terrestre, eficiente para viajes interurbanos y rurales.",
-    "Autobus": "Vehículo de transporte público urbano e interurbano accesible.",
-    "Barco": "Medio de transporte acuático, desde ferris hasta cruceros de lujo.",
+    "Autobus": "Vehiculo de transporte publico urbano e interurbano accesible.",
+    "Barco": "Medio de transporte acuatico, desde ferris hasta cruceros de lujo.",
     "Bicicleta": "Transporte personal sostenible, ideal para distancias cortas y ejercicio.",
-    "Moto": "Vehículo de dos ruedas, ágil para la ciudad y viajes cortos.",
+    "Moto": "Vehiculo de dos ruedas, agil para la ciudad y viajes cortos.",
     "Coche": "Transporte personal o familiar, ofrece comodidad y privacidad en viajes.",
-    "Tranvia": "Sistema de transporte urbano sobre rieles, común en ciudades europeas.",
-    "Metro": "Tren subterráneo rápido, evita el tráfico urbano conectando áreas metropolitanas.",
-    "Patinete": "Pequeño vehículo eléctrico, opción práctica para movilidad urbana.",
-    "Yate": "Embarcación de lujo para recreación y viajes marítimos.",
-    "Globo": "Aeronave ligera que ofrece vuelos tranquilos con vistas panorámicas.",
-    "Ferry": "Barco utilizado para transportar personas y vehículos a través del agua."
+    "Tranvia": "Sistema de transporte urbano sobre rieles, comun en ciudades europeas.",
+    "Metro": "Tren subterraneo rapido, evita el trafico urbano conectando areas metropolitanas.",
+    "Patinete": "Pequeno vehiculo electrico, opcion practica para movilidad urbana.",
+    "Yate": "Embarcacion de lujo para recreacion y viajes maritimos.",
+    "Globo": "Aeronave ligera que ofrece vuelos tranquilos con vistas panoramicas.",
+    "Ferry": "Barco utilizado para transportar personas y vehiculos a traves del agua."
 };
 
 
 // Array de Equipaje
 let equipaje = {
-    "Mochila": "Bolsa versátil para llevar objetos personales en la espalda.",
-    "Mapa": "Herramienta de navegación física o digital para orientarse en viajes.",
-    "Brujula": "Instrumento para determinar la dirección relativa a los polos magnéticos de la Tierra.",
-    "Bota": "Calzado resistente diseñado para la protección y comodidad en actividades al aire libre.",
-    "Camara": "Dispositivo para capturar fotografías o videos de experiencias de viaje.",
+    "Mochila": "Bolsa versatil para llevar objetos personales en la espalda.",
+    "Mapa": "Herramienta de navegacion fisica o digital para orientarse en viajes.",
+    "Brujula": "Instrumento para determinar la direccion relativa a los polos magneticos de la Tierra.",
+    "Bota": "Calzado resistente disenado para la proteccion y comodidad en actividades al aire libre.",
+    "Camara": "Dispositivo para capturar fotografias o videos de experiencias de viaje.",
     "Ropa": "Prendas seleccionadas adecuadamente para el clima y actividades planeadas.",
-    "Protector": "Productos de protección solar o contra insectos, esenciales para viajes al aire libre.",
+    "Protector": "Productos de proteccion solar o contra insectos, esenciales para viajes al aire libre.",
     "Botiquin": "Conjunto de insumos de primeros auxilios para atender emergencias menores.",
-    "Gafas": "Gafas de sol para protección contra rayos UV o gafas correctoras.",
-    "Pasaporte": "Documento oficial requerido para viajar entre países."
+    "Gafas": "Gafas de sol para proteccion contra rayos UV o gafas correctoras.",
+    "Pasaporte": "Documento oficial requerido para viajar entre paises."
 };
+
 
 
 let estadoJuego = {
@@ -83,8 +84,11 @@ let estadoJuego = {
     mascara: '',
     listaSeleccionada: '',
     vidas: 6,
+    aciertos: 0,
     letrasCorrectas:[],
     letrasIncorrectas: [],
+    victoria: false,
+    derrota: false,
 };
 
 if (localStorage.getItem('estadoJuego')) {
@@ -100,14 +104,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
         cargarEstadoJuego();
     });
 });
+document.getElementById("volverAjugar").addEventListener("click", function() {
+    resetearJuego();
+    cargarEstadoJuego();
+});
 
 
 let palabrasDisponibles ='ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-let aciertos = 0;
-let listaGuardar = '';
 
 function cargarEstadoJuego() {
     let estadoGuardado = localStorage.getItem('estadoJuego');
+
 
     if (estadoGuardado) {
         
@@ -116,9 +123,15 @@ function cargarEstadoJuego() {
         estadoJuego.palabraActual = estadoCargado.palabraActual;
         estadoJuego.mascara = estadoCargado.mascara;
         estadoJuego.vidas = estadoCargado.vidas;
+        estadoJuego.aciertos = estadoCargado.aciertos;
         document.getElementById('nombreJugador').value = estadoCargado.nombreUsuario; 
         estadoJuego.listaSeleccionada = estadoCargado.lista;
+        estadoJuego.letrasCorrectas = estadoCargado.letrasCorrectas;
+        estadoJuego.letrasIncorrectas = estadoCargado.letrasIncorrectas;
+        estadoJuego.victoria = estadoCargado.victoria;
+        estadoJuego.derrota = estadoCargado.derrota;
         generarBotonesLetras();
+        pintarBotones();
         crearMascara(estadoJuego.palabraActual.length);
         actualizarMascaraGuardada();
         actualizarImagenAhorcadoGuardada();
@@ -126,8 +139,13 @@ function cargarEstadoJuego() {
 
         guardarEstadoJuego();
         console.log('juego cargado');
-
-        // Resto de la actualización de la interfaz...
+        
+        if (estadoJuego.victoria === true) {
+            mostrarResultadoFinal();
+        }else if (estadoJuego.derrota === true) {
+            mostrarResultadoFinal();
+        }
+        
     } else {
         // Inicializar un nuevo juego si no hay estado guardado
         iniciarJuego();
@@ -155,9 +173,9 @@ function mostrarCategoriaPalabra() {
     const nombreCategoria = estadoJuego.listaSeleccionada; 
     const elementoCategoria = document.getElementById('categoria'); 
 
-    // Actualiza el texto del elemento con el nombre de la categoría
+    // Actualiza el texto del elemento con el nombre de la categoria
     if (elementoCategoria) {
-        elementoCategoria.textContent = `Categoría: ${nombreCategoria.charAt(0).toUpperCase() + nombreCategoria.slice(1)}`; 
+        elementoCategoria.textContent = `Categoria: ${nombreCategoria.charAt(0).toUpperCase() + nombreCategoria.slice(1)}`; 
     }
 }
 
@@ -217,7 +235,7 @@ function agregarEventosClick() {
     botones.forEach(function(boton) {
         boton.addEventListener('click', function() {
             // Aquí va la lógica que quieres ejecutar cuando se hace clic en una letra
-            buscarLetraEnPalabraSeleccionada(boton);           
+            buscarLetraEnPalabraSeleccionada(boton);         
 
             //boton.remove(); //elimina el botón de la letra al seleccionarlo
         });
@@ -233,7 +251,7 @@ function buscarLetraEnPalabraSeleccionada(button) {
     for (let i = 0; i < estadoJuego.palabraActual.length; i++) {
         if (letra === estadoJuego.palabraActual[i].toUpperCase()){
             estadoJuego.mascara = actualizarMascara(i, letra, estadoJuego.mascara);            
-            aciertos++;
+            estadoJuego.aciertos++;
             encontrado = true;
         }
     }
@@ -241,9 +259,9 @@ function buscarLetraEnPalabraSeleccionada(button) {
     if (encontrado) {
         // Actualizar la máscara en el DOM
         document.getElementById("mascara").textContent = estadoJuego.mascara;
-        if(aciertos === estadoJuego.palabraActual.length){
+        if(estadoJuego.aciertos === estadoJuego.palabraActual.length){
+            estadoJuego.victoria = true;
             mostrarResultadoFinal();
-            resetearJuego();
         }
         button.style.backgroundColor = "green";
         button.disabled = true;
@@ -258,6 +276,23 @@ function buscarLetraEnPalabraSeleccionada(button) {
     guardarEstadoJuego();
 }
 
+function pintarBotones(){
+    const botones = document.querySelectorAll('.letra');
+    
+    // Recorre todos los botones
+    botones.forEach(boton => {
+        // Verifica si el texto del botón está en la lista de letras correctas
+        if (estadoJuego.letrasCorrectas.includes(boton.textContent)) {
+            boton.style.backgroundColor = "green"; // Pinta el botón de verde
+        }
+
+        // Verifica si el texto del botón está en la lista de letras incorrectas
+        if (estadoJuego.letrasIncorrectas.includes(boton.textContent)) {
+            boton.style.backgroundColor = "red"; // Pinta el botón de rojo
+        }
+    });
+}
+
 function actualizarJuego(){
     
     estadoJuego.vidas--;
@@ -266,10 +301,11 @@ function actualizarJuego(){
     
     if (estadoJuego.vidas === 0){
         document.getElementById("mascara").textContent = estadoJuego.palabraActual;
+        estadoJuego.derrota = true;
         mostrarResultadoFinal();
-        resetearJuego();
+
     }
-            
+
     console.log('juegoAcualizado');
 }
 
@@ -315,10 +351,13 @@ function guardarEstadoJuego() {
         palabraActual: estadoJuego.palabraActual,
         mascara: estadoJuego.mascara,
         vidas: estadoJuego.vidas,
+        aciertos: estadoJuego.aciertos,
         nombreUsuario: document.getElementById('nombreJugador').value,
         lista: estadoJuego.listaSeleccionada,
         letrasCorrectas: estadoJuego.letrasCorrectas,
-        letrasIncorrectas: estadoJuego.letrasIncorrectas
+        letrasIncorrectas: estadoJuego.letrasIncorrectas,
+        victoria: estadoJuego.victoria,
+        derrota: estadoJuego.derrota
 
     };
 
@@ -327,23 +366,26 @@ function guardarEstadoJuego() {
 
 
 function mostrarResultadoFinal() {
-    // Encuentra la descripción de la palabra basada en la lista seleccionada
+    // Obtener la palabra y su descripción
+    const palabra = estadoJuego.palabraActual;
     let descripcion;
+
+    // Determinar la descripción basada en la lista seleccionada
     if (estadoJuego.listaSeleccionada === 'lugares') {
-        descripcion = lugares[estadoJuego.palabraActual];
+        descripcion = lugares[palabra];
     } else if (estadoJuego.listaSeleccionada === 'transporte') {
-        descripcion = transporte[estadoJuego.palabraActual];
+        descripcion = transporte[palabra];
     } else if (estadoJuego.listaSeleccionada === 'equipaje') {
-        descripcion = equipaje[estadoJuego.palabraActual];
+        descripcion = equipaje[palabra];
     }
 
-    // Prepara el mensaje final
-    let mensajeFinal = `La palabra era: ${estadoJuego.palabraActual}\nDescripción: ${descripcion}`;
+    // Actualizar el contenido de los divs correspondientes
+    document.getElementById('palabra').innerHTML = `Palabra: ${palabra}`;
+    document.getElementById('descripcion').innerHTML = `Descripcion: ${descripcion}`;
 
-    // Muestra el mensaje final
-    // Puedes ajustar este paso para que se muestre en tu interfaz de usuario según sea necesario
-    alert(mensajeFinal); // O reemplaza esto por una actualización en la interfaz de usuario
-
+    // Mostrar el div imgPalabra
+    document.getElementById('final').style.display = 'block';
+    document.getElementById('juego').style.display = 'none';
 }
 
 
@@ -355,11 +397,17 @@ function resetearJuego() {
     estadoJuego.palabraActual = '';
     estadoJuego.mascara = '';
     estadoJuego.vidas = 6; 
-    aciertos = 0;
+    estadoJuego.aciertos = 0;
+    estadoJuego.letrasCorrectas = [],
+    estadoJuego.letrasIncorrectas = [],
+    estadoJuego.victoria = false;
+    estadoJuego.derrota = false;
+    
     document.getElementById("mascara").textContent = '';
     document.getElementById("imgActual").src = 'imagenesAhorcado/6.png'; 
     
     iniciarJuego();
-
+    document.getElementById('final').style.display = 'none';
+    document.getElementById('juego').style.display = 'block';
 }
 
