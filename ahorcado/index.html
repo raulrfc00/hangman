@@ -2,37 +2,49 @@
 <html>
 <head>
     <title>Ahorcado</title>
-    <link rel="stylesheet" type="text/css" href="estilos.css">
+    //<link rel="stylesheet" type="text/css" href="estilos.css">
+    <!-- Añade esto en el <head> de tu archivo HTML -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
 </head>
 <body>
-    <div id="inicio">
-        <input type="text" id="nombreJugador" placeholder="Ingresa tu nombre">
-        <button id="botonComenzar">Comenzar a jugar</button>
-    </div>
-
-    <div id="juego" style="display: none;">
-        <div id="categoria">Categoría: </div>
-
-        
-        <div id="imagenAhorcado">
-            <img id="imgActual" src="imagenesAhorcado/6.png" alt="imagen ahorcado" style="display: block;">
-
-        </div>
-        <div id="seleccionLetras">
-            <!-- Aquí se generarán los botones de las letras -->
-        </div>
-        <div id="mascara">
-            <!-- Aquí se mostrará la palabra con máscaras -->
+    <div id="inicio" class="container mt-5">
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+                <input type="text" id="nombreJugador" class="form-control mb-3" placeholder="Ingresa tu nombre">
+                <button id="botonComenzar" class="btn btn-primary btn-block">Comenzar a jugar</button>
+            </div>
         </div>
     </div>
 
-    <div id="final" style="display: none;">
-        <div id="palabra"></div>
-        <div id="imgPalabra" ></div>
-        <div id="descripcion"></div>
-
-        <button id="volverAjugar">Volver a jugar</button>
+    <div id="juego" class="container mt-5" style="display: none;">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title" id="categoria">Categoría: </h5>
+                <div id="imagenAhorcado" class="text-center">
+                    <img id="imgActual" src="imagenesAhorcado/6.png" alt="imagen ahorcado" class="img-fluid">
+                </div>
+                <div id="seleccionLetras" class="text-center mt-3">
+                    <!-- Aquí se generarán los botones de las letras -->
+                </div>
+                <div id="mascara" class="text-center font-weight-bold mt-3">
+                    <!-- Aquí se mostrará la palabra con máscaras -->
+                </div>
+            </div>
+        </div>
     </div>
+
+    <div id="final" class="container mt-5" style="display: none;">
+        <div class="card">
+            <div class="card-body text-center">
+                <h5 id="palabra"></h5>
+                <div id="imgPalabra"></div>
+                <p id="descripcion"></p>
+                <button id="volverAjugar" class="btn btn-success">Volver a jugar</button>
+            </div>
+        </div>
+    </div>
+    
 
     <script src="ahorcado.js"></script>
 </body>

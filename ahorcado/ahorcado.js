@@ -218,7 +218,7 @@ function generarBotonesLetras() {
     const letras = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     let html = '';
     for(let i = 0; i < letras.length; i++) {
-        html += '<button class="letra">' + letras[i] + '</button>';
+    html += '<button class="letra btn btn-secondary m-1">' + letras[i] + '</button>';
     }
     document.getElementById("seleccionLetras").innerHTML = html;
 
