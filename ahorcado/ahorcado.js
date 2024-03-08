@@ -27,7 +27,6 @@
 let lugares = {
     "Paris": "Capital de Francia, famosa por la Torre Eiffel y el Museo del Louvre.",
     "Londres": "Capital del Reino Unido, conocida por el Big Ben y el Puente de Londres.",
-    "NuevaYork": "Conocida como la Gran Manzana, famosa por Times Square y Central Park.",
     "Tokio": "Capital de Japon, famosa por su torre Skytree y el cruce de Shibuya.",
     "Madrid": "Capital de Espana, conocida por el Museo del Prado y la Puerta del Sol.",
     "Berlin": "Capital de Alemania, famosa por el Muro de Berlin y la Puerta de Brandeburgo.",
@@ -37,8 +36,6 @@ let lugares = {
     "Dubai": "Emirato de los EAU, famoso por el Burj Khalifa y las islas Palm.",
     "Sidney": "Ciudad de Australia, conocida por la Opera de Sidney y el Puente del Puerto.",
     "Bangkok": "Capital de Tailandia, famosa por sus vibrantes mercados y templos budistas.",
-    "BuenosAires": "Capital de Argentina, conocida por el tango y la Casa Rosada.",
-    "Cairo": "Capital de Egipto, famosa por las Piramides de Giza y la Esfinge.",
     "Lisboa": "Capital de Portugal, conocida por el barrio de Alfama y la Torre de Belem.",
     "Amsterdam": "Capital de los Paises Bajos, famosa por sus canales y el Museo Van Gogh.",
     "Praga": "Capital de la Republica Checa, conocida por el Puente de Carlos y su reloj astronomico."
@@ -368,20 +365,24 @@ function guardarEstadoJuego() {
 function mostrarResultadoFinal() {
     // Obtener la palabra y su descripción
     const palabra = estadoJuego.palabraActual;
-    let descripcion;
+    let descripcion, imagen;
 
     // Determinar la descripción basada en la lista seleccionada
     if (estadoJuego.listaSeleccionada === 'lugares') {
         descripcion = lugares[palabra];
+        imagen = `imagenesLugares/Paris.jpg`; 
     } else if (estadoJuego.listaSeleccionada === 'transporte') {
         descripcion = transporte[palabra];
+        imagen = `imagenesTransportes/${palabra}.jpg`; 
     } else if (estadoJuego.listaSeleccionada === 'equipaje') {
         descripcion = equipaje[palabra];
+        imagen = `imagenesEquipaje/${palabra}.jpg`; 
     }
 
     // Actualizar el contenido de los divs correspondientes
-    document.getElementById('palabra').innerHTML = `Palabra: ${palabra}`;
-    document.getElementById('descripcion').innerHTML = `Descripcion: ${descripcion}`;
+    document.getElementById('palabra').innerHTML = `${palabra}`;
+    document.getElementById('descripcion').innerHTML = `${descripcion}`;
+    document.getElementById('imagenPalabra').src = imagen;
 
     // Mostrar el div imgPalabra
     document.getElementById('final').style.display = 'block';
