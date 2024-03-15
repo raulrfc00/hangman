@@ -5,7 +5,6 @@
     <link rel="stylesheet" type="text/css" href="estilos.css">
     <!-- Añade esto en el <head> de tu archivo HTML -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
 </head>
 <body>
     <div id="inicio" class="container mt-5">
@@ -16,7 +15,6 @@
             </div>
         </div>
     </div>
-
     <div id="juego" class="container mt-5" style="display: none;">
         <div class="card">
             <div class="card-body">
@@ -25,27 +23,24 @@
                     <img id="imgActual" src="imagenesAhorcado/6.png" alt="imagen ahorcado" class="img-fluid">
                 </div>
                 <div id="seleccionLetras" class="text-center mt-3">
-                    <!-- Aquí se generarán los botones de las letras -->
                 </div>
                 <div id="mascara" class="text-center font-weight-bold mt-3">
-                    <!-- Aquí se mostrará la palabra con máscaras -->
                 </div>
             </div>
         </div>
     </div>
-
     <div id="final" class="container mt-5" style="display: none;">
         <div class="card">
             <div class="card-body text-center">
                 <h5 id="palabra"></h5>
                 <p id="descripcion"></p>
-                <img id="imagenPalabra" src="" alt="200px" class="img-fluid">
-                <button id="volverAjugar" class="btn btn-success">Volver a jugar</button>
+                <img id="imagenPalabra" src="" class="img-fluid">
+                <div class="mt-4"> <!-- Nuevo div para centrar el botón -->
+                    <button id="volverAjugar" class="btn btn-success">Volver a jugar</button>
+                </div>
             </div>
         </div>
     </div>
-    
-
     <script src="ahorcado.js"></script>
 </body>
 </html>

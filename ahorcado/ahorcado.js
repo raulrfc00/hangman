@@ -68,8 +68,6 @@ let equipaje = {
     "Bota": "Calzado resistente disenado para la proteccion y comodidad en actividades al aire libre.",
     "Camara": "Dispositivo para capturar fotografias o videos de experiencias de viaje.",
     "Ropa": "Prendas seleccionadas adecuadamente para el clima y actividades planeadas.",
-    "Protector": "Productos de proteccion solar o contra insectos, esenciales para viajes al aire libre.",
-    "Botiquin": "Conjunto de insumos de primeros auxilios para atender emergencias menores.",
     "Gafas": "Gafas de sol para proteccion contra rayos UV o gafas correctoras.",
     "Pasaporte": "Documento oficial requerido para viajar entre paises."
 };
@@ -370,7 +368,7 @@ function mostrarResultadoFinal() {
     // Determinar la descripción basada en la lista seleccionada
     if (estadoJuego.listaSeleccionada === 'lugares') {
         descripcion = lugares[palabra];
-        imagen = `imagenesLugares/Paris.jpg`; 
+        imagen = `imagenesLugares/${palabra}.jpg`; 
     } else if (estadoJuego.listaSeleccionada === 'transporte') {
         descripcion = transporte[palabra];
         imagen = `imagenesTransportes/${palabra}.jpg`; 
